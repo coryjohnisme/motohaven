@@ -1,3 +1,9 @@
+/* Define color variables */
+:root {
+    --main-color: #f10000;
+    --light-color: #ffffff;
+    --accent-color: #000000;
+}
 /* Reset default styles */
 body, h1, h2, h3, p, ul, li, a, form, input, button {
     margin: 0;
@@ -9,25 +15,39 @@ body, h1, h2, h3, p, ul, li, a, form, input, button {
     display: flex;
     flex-direction: column;
     font-family: 'Anek Latin', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, p{
+    margin: 30px 0;
+}
+
+a{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 h1{
     font-size: 40px;
+    line-height: 1;
 }
 
-/* Define color variables */
-:root {
-    --main-color: #f10000;
-    --light-color: #ffffff;
-    --accent-color: #000000;
+.btn{
+    height: 60px;
+    max-width: 375px;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    text-align: center;
+    justify-content: center;
+    margin: 30px 0;
 }
 
 /* Center and style header, block, and footer */
 .header, .block, .footer {
     width: 100vw;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -37,12 +57,11 @@ h1{
     color: var(--light-color);
     background-image: url('/img/header-background.jpg');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
 }
 
-.block{
-
+.default{
+    margin: 60px auto;    
 }
 
 .footer{
@@ -81,127 +100,102 @@ h1{
 }
 
 .nav a {
+    font-weight: 400;
 }
 
 .hero {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    gap: 30px;
 }
 
 .hero img{
     max-width: 400px;
+    width: 40%;
 }
 
 .hero-copy-block {
+    margin: 30px 0;
 }
 
-.hero h1 {
+.video-block {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 60px;
 }
 
-.hero p {
-}
-
-.btn{
-    height: 60px;
-    width: 375px;
-    /* border: 1px solid var(--main-color); */
-    border-radius: 30px;
-    background-color: var(--main-color);
-    text-align: center;
-    text-transform: uppercase;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.block {
-}
-
-.default {
-}
-
-.highlight {
+.video-block img {
+    flex: 1; /* Take up all available space */
+    max-width: calc(50% - 60px); /* Set maximum width */
+    height: auto;
+    object-fit: contain; /* Maintain aspect ratio without cropping */
 }
 
 .copy-block {
+    flex: 1; /* Take up all available space */
 }
 
-.copy-block h1 {
+
+
+.double-buttons{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px
 }
 
-.copy-block p {
+.double-buttons .btn{
+    width: calc(50% - (15px/2));
+    background-color: var(--light-color);
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    margin: 0;
 }
 
-.double-buttons {
+.highlight{
+    background-color: var(--main-color);
+    padding: 60px 0;
 }
 
-.double-buttons .btn {
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--light-color);
 }
 
-.form {
+form{
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-.form h1 {
+.form input{
+    max-width: 375px;
+    width: calc(50% - (30px / 2));
+    background-color: var(--main-color);
+    border: none;
+    border-bottom: 1px solid var(--light-color);
+    margin-top: 30px;
 }
 
-.form input {
+input.btn{
+    background-color: var(--main-color);
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
+    margin: 30px auto;
+    align-items: center;
 }
 
-.services {
+form input::placeholder,
+form textarea::placeholder {
+    color: var(--light-color);
 }
 
-.services h1 {
+form input:focus,
+form textarea:focus {
+    outline: none;
 }
-
-.service-list {
-}
-
-.service {
-}
-
-.service img {
-}
-
-.service h3 {
-}
-
-.service p {
-}
-
-.dark {
-}
-
-.price-cards {
-}
-
-.card {
-}
-
-.card h2 {
-}
-
-.card h3 {
-}
-
-.card-list {
-}
-
-.card-list li {
-}
-
-.footer {
-}
-
-.footer-content {
-}
-
-.footer-nav {
-}
-
-.footer-nav li {
-}
-
-.footer-nav a {
-}
-
