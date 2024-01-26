@@ -1,32 +1,207 @@
 /* Reset default styles */
-body, h1, h2, p, ul, li, form, input, button {
+body, h1, h2, h3, p, ul, li, a, form, input, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Anek Latin', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+h1{
+    font-size: 40px;
 }
 
 /* Define color variables */
 :root {
     --main-color: #f10000;
+    --light-color: #ffffff;
     --accent-color: #000000;
 }
 
 /* Center and style header, block, and footer */
 .header, .block, .footer {
-    width: 100%;
-    max-width: 100vw;
+    width: 100vw;
     margin: 0 auto;
-    background-color: var(--main-color);
-    color: #fff; /* Change text color as needed */
-    padding: 20px; /* Adjust padding as needed */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.header{
+    color: var(--light-color);
+    background-image: url('/img/header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.block{
+
+}
+
+.footer{
+
 }
 
 /* Center and style container */
 .container {
-    width: 100%;
+    width: calc(100vw - (30px * 2));
     max-width: 1220px;
     margin: 0 auto;
     padding: 0 30px;
 }
 
+.nav-bar {
+    padding: 30px 0;
+    gap: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav li {
+}
+
+.nav a {
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero img{
+    max-width: 400px;
+}
+
+.hero-copy-block {
+}
+
+.hero h1 {
+}
+
+.hero p {
+}
+
+.btn{
+    height: 60px;
+    width: 375px;
+    /* border: 1px solid var(--main-color); */
+    border-radius: 30px;
+    background-color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.block {
+}
+
+.default {
+}
+
+.highlight {
+}
+
+.copy-block {
+}
+
+.copy-block h1 {
+}
+
+.copy-block p {
+}
+
+.double-buttons {
+}
+
+.double-buttons .btn {
+}
+
+.form {
+}
+
+.form h1 {
+}
+
+.form input {
+}
+
+.services {
+}
+
+.services h1 {
+}
+
+.service-list {
+}
+
+.service {
+}
+
+.service img {
+}
+
+.service h3 {
+}
+
+.service p {
+}
+
+.dark {
+}
+
+.price-cards {
+}
+
+.card {
+}
+
+.card h2 {
+}
+
+.card h3 {
+}
+
+.card-list {
+}
+
+.card-list li {
+}
+
+.footer {
+}
+
+.footer-content {
+}
+
+.footer-nav {
+}
+
+.footer-nav li {
+}
+
+.footer-nav a {
+}
 
