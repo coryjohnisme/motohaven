@@ -60,7 +60,7 @@ h3{
 
 .header{
     color: var(--light-color);
-    background-image: url('img/header-background.jpg');
+    background-image: url('../img/header-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -127,19 +127,18 @@ h3{
 
 .video-block {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    flex-wrap: wrap; 
     gap: 60px;
 }
 
 .video-block img {
-    flex: 1; /* Take up all available space */
-    max-width: calc(50% - 60px); /* Set maximum width */
+    flex: 1;
+    max-width: calc(50% - 60px);
     height: auto;
-    object-fit: contain; /* Maintain aspect ratio without cropping */
+    object-fit: contain; 
 }
-
 .copy-block {
-    flex: 1; /* Take up all available space */
+    flex: 1;
 }
 
 
