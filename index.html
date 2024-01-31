@@ -21,6 +21,7 @@
                     <a href="index.html">
                         <img src="img/logo.svg">
                     </a>
+                    
                 </div>
                 <ul class="nav">
                     <li><a href="#">Join</a></li>
@@ -28,6 +29,18 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
+            </div>
+            <div class="mobile-container">
+                <div class="mobile-nav">
+                    <a href="index.html">
+                        <img src="img/logo.svg">
+                    </a>
+                    <a href="#" class="dot-container">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </a>
+                </div>
             </div>
             <div class="hero">
                 <div class="hero-copy-block">
@@ -152,5 +165,23 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dotContainer = document.querySelector('.dot-container');
+            const navBar = document.querySelector('.nav-bar');
+            let isNavOpen = false;
+    
+            dotContainer.addEventListener('click', function() {
+                if (isNavOpen) {
+                    navBar.style.transform = 'translate(100vw, 0)';
+                    dotContainer.style.transform = 'translate(0, 0)';
+                } else {
+                    navBar.style.transform = 'translate(0, 0)';
+                    dotContainer.style.transform = 'translate(calc(-100vw + 105px), 0';
+                }
+                isNavOpen = !isNavOpen;
+            });
+        });
+    </script>
 </body>
 </html>
