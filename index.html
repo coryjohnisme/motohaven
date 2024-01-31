@@ -25,9 +25,10 @@
                 </div>
                 <ul class="nav">
                     <li><a href="stripe.html">Join</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#pricing-section">Pricing</a></li>
+                    <li><a href="#service-section">Services</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
                 </ul>
             </div>
             <div class="mobile-container">
@@ -53,7 +54,7 @@
         </div>
     </div>
     <div class="block default">
-        <div class="container video-block">
+        <div class="container video-block" id="about-section">
             <img src="img/video.jpg">
             <div class="copy-block">
                 <h1>Exclusivity Redefined</h1>
@@ -66,7 +67,7 @@
         </div>
     </div>
     <div class="block highlight">
-        <div class="container">
+        <div class="container" id="contact-section">
             <div class="form">
                 <h1>Join Today</h1>
                 <form action="#" method="post">
@@ -81,7 +82,7 @@
     </div>
     <div class="block default">
         <div class="container">
-            <div class="services">
+            <div class="services" id="service-section">
                 <h1>Service Redefined</h1>
                 <ul class="service-list">
                     <li class="service">
@@ -110,7 +111,7 @@
         </div>
     </div>
     <div class="block dark">
-        <div class="container pricing">
+        <div class="container pricing" id="pricing-section">
             <h1>Membership Pricing</h1>
             <div class="price-cards">
                 <div class="card red-card">
@@ -155,9 +156,10 @@
             <div class="footer-content">
                 <ul class="footer-nav">
                     <li><a href="stripe.html">Join</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#pricing-section">Pricing</a></li>
+                    <li><a href="#service-section">Services</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
                     <li><a href="#">Privacy</a></li>
                     <li><a href="#">Terms</a></li>
                 </ul>
@@ -169,9 +171,23 @@
         document.addEventListener("DOMContentLoaded", function() {
             const dotContainer = document.querySelector('.dot-container');
             const navBar = document.querySelector('.nav-bar');
+            const navLinks = document.querySelectorAll('.nav li a'); // Select all navigation links
             let isNavOpen = false;
             
             dotContainer.addEventListener('click', function() {
+                toggleNav();
+            });
+    
+            // Add event listener to each navigation link to close the menu when clicked
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (isNavOpen) {
+                        toggleNav();
+                    }
+                });
+            });
+    
+            function toggleNav() {
                 if (isNavOpen) {
                     // Enable scrolling
                     document.body.style.overflowY = 'auto';
@@ -193,13 +209,15 @@
                     dotContainer.style.transform = 'translate(calc(-100vw + 105px), 0)';
                 }
                 isNavOpen = !isNavOpen;
-            });
+            }
     
             function preventScroll(event) {
                 event.preventDefault();
             }
         });
     </script>
+    
+    
     
     
 
