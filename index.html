@@ -166,22 +166,32 @@
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const dotContainer = document.querySelector('.dot-container');
-            const navBar = document.querySelector('.nav-bar');
-            let isNavOpen = false;
-    
-            dotContainer.addEventListener('click', function() {
-                if (isNavOpen) {
-                    navBar.style.transform = 'translate(100vw, 0)';
-                    dotContainer.style.transform = 'translate(0, 0)';
-                } else {
-                    navBar.style.transform = 'translate(0, 0)';
-                    dotContainer.style.transform = 'translate(calc(-100vw + 105px), 0';
-                }
-                isNavOpen = !isNavOpen;
-            });
+    document.addEventListener("DOMContentLoaded", function() {
+        const dotContainer = document.querySelector('.dot-container');
+        const navBar = document.querySelector('.nav-bar');
+        let isNavOpen = false;
+        
+        dotContainer.addEventListener('click', function() {
+            if (isNavOpen) {
+                // Enable scrolling
+                document.body.style.overflowY = 'auto';
+                // Scroll to the top of the page
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                navBar.style.transform = 'translate(100vw, 0)';
+                dotContainer.style.transform = 'translate(0, 0)';
+            } else {
+                // Disable scrolling
+                document.body.style.overflowY = 'hidden';
+                navBar.style.transform = 'translate(0, 0)';
+                dotContainer.style.transform = 'translate(calc(-100vw + 105px), 0)';
+            }
+            isNavOpen = !isNavOpen;
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
