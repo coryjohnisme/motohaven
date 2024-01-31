@@ -243,12 +243,13 @@ form textarea:focus {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    width: 100%;
 }
 .service{
     display: flex;
     min-width: calc(50% - 15px);
     width: 500px;
-    max-width: calc(100% - 30px * 2);
+    max-width: 100%;
 }
 
 .service img{
@@ -449,7 +450,7 @@ form textarea:focus {
         background-color: white;
     }
 
-    .nav-bar{
+    .nav-bar {
         flex-direction: column;
         position: fixed;
         background-color: var(--main-color);
@@ -470,5 +471,14 @@ form textarea:focus {
         font-weight: 600;
         font-size: 16px;
     }    
+
+}
+
+@media (max-width: 600px) {
+
+    .service-list{
+        width: 100%;
+        
+    }
 
 }
