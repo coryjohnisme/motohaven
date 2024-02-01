@@ -148,12 +148,14 @@ h3{
     gap: 60px;
 }
 
-.video-block img {
+.video-block img, 
+.video-block video  {
     flex: 1;
     max-width: calc(50% - 60px);
     height: auto;
     object-fit: contain; 
 }
+
 .copy-block {
     flex: 1;
 }
@@ -290,6 +292,11 @@ form textarea:focus {
     margin-top: 15px;
 }
 
+.card .btn{
+    min-width: 225px;
+
+}
+
 .black-card{
     background-color: var(--accent-color);
     border: 1px solid var(--light-color);
@@ -303,18 +310,21 @@ form textarea:focus {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    padding: 30px 30px 60px;
+    padding: 30px;
+    margin: 0 0 60px;
     border-radius: 30px;
 }
 
 .card-header{
     border-bottom: 1px solid var(--light-color);
     margin-bottom: 30px;
+
 }
 
 .price-cards{
@@ -326,6 +336,7 @@ form textarea:focus {
 }
 .pricing{
     margin-top: 60px;
+    margin-bottom: 30px;
 }
 
 .pricing h1{
@@ -377,6 +388,62 @@ form textarea:focus {
     gap: 30px;
 }
 
+
+.modal {
+    display: none; /* Hidden by default */
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: var(--main-color);
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 30px;
+    width: calc(100% - 60px);
+    max-width: 900px;
+  }
+
+ .modal-content .form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--light-color);
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.modal-title{
+    width: calc(100% - 90px);
+    min-width: 375px;
+    display: flex;
+    justify-content: center;
+}
+  
+  .close {
+    color: var(--light-color);
+    float: right;
+    font-weight: 100;
+    font-size: 45px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: var(--main-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
 @media (max-width: 730px) {
     .footer-nav {
       flex-direction: column;
@@ -411,9 +478,13 @@ form textarea:focus {
     .hero img{
         width: 75%;
     }
-    .video-block img {
+    .video-block img,
+    .video-block video {
         width: 100%;
         max-width: 100%;
+    }
+    .video-block{
+        gap: 30px;
     }
 
     .logo{
