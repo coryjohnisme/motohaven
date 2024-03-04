@@ -1,16 +1,16 @@
 <html lang="en">
 
 <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16481581004">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16481581004">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'AW-16481581004');
-</script>
+        gtag('config', 'AW-16481581004');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,12 +20,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta name="description" content="Luxury, classic, and collector car storage for the Wellington, FL area. MotoHaven provides on demand vehicle concierge with nparalleled luxury storage, in Palm Beach, FL.">    
-    <meta property="og:title" content="MotoHaven - Wellington's on demand vehicle concierge with unparalleled luxury storage.">
-    <meta property="og:description" content="Luxury, classic, and collector car storage for the Wellington, FL area. MotoHaven provides on demand vehicle concierge with nparalleled luxury storage, in Palm Beach, FL.">
+    <meta name="description"
+        content="Luxury, classic, and collector car storage for the Wellington, FL area. MotoHaven provides on demand vehicle concierge with nparalleled luxury storage, in Palm Beach, FL.">
+    <meta property="og:title"
+        content="MotoHaven - Wellington's on demand vehicle concierge with unparalleled luxury storage.">
+    <meta property="og:description"
+        content="Luxury, classic, and collector car storage for the Wellington, FL area. MotoHaven provides on demand vehicle concierge with nparalleled luxury storage, in Palm Beach, FL.">
     <meta property="og:url" content="https://www.themotohaven.com">
     <meta property="og:type" content="website">
-    <meta name="keywords" content="MotoHaven, palm beach car storage, auto storage, long term storage, classic car storage, luxury car storage, palm beach car storage, wellington car storage, south florida car storage, collector car storage">
+    <meta name="keywords"
+        content="MotoHaven, palm beach car storage, auto storage, long term storage, classic car storage, luxury car storage, palm beach car storage, wellington car storage, south florida car storage, collector car storage">
     <meta name="author" content="MotoHaven">
     <meta property="og:image" content="/ogimage.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@125,100;125,300;125,600&display=swap"
@@ -73,7 +77,7 @@
             </div>
             <div class="hero">
                 <div class="hero-copy-block">
-                    <h1>On demand vehicle concierge. Unparalleled luxury storage.</h1>
+                    <h1>Unparalleled luxury car storage in Wellington, FL.</h1>
                     <p>From airport curbside hand-off, to at home driveway drop-offs, MotoHaven’s™ AutoConcierge™
                         service is truly unmatched.</p>
                     <a class="btn" href="#">Join Today</a>
@@ -88,9 +92,7 @@
             <video src="vid/motohaven.mp4" autoplay loop muted poster="img/video.jpg" controls></video>
             <div class="copy-block">
                 <h1>Exclusivity Redefined</h1>
-                <p>MotoHaven is not just a storage facility; it's an exclusive haven for your luxury vehicles. Our
-                    state-of-the-art facility is designed to accommodate the most prestigious automobiles, providing a
-                    secure and private environment that complements the sophistication of your lifestyle.</p>
+                <p>MotoHaven is not just a storage facility; it's an exclusive car storage haven for your luxury vehicles in Wellington, FL. Our state-of-the-art facility located just west of Palm Beach International is designed to accommodate the most prestigious automobiles, providing a secure and private environment that complements the sophistication of your lifestyle.</p>
                 <div class="double-buttons">
                     <a class="btn" href="#">Join Today</a>
                     <!-- <a class="btn" href="#">Download the App</a> -->
@@ -98,7 +100,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="block highlight">
         <div class="container" id="contact-section">
             <div class="form">
@@ -228,65 +230,65 @@
 
             let isNavOpen = false;
 
-            contactForm.addEventListener('submit', function(event) {
-    // Prevent the default form submission
-    event.preventDefault();
-    
-    // Optionally, you can submit the form asynchronously using JavaScript's Fetch API or XMLHttpRequest
-    // Example using Fetch API:
-    fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
-        method: 'POST',
-        body: new FormData(contactForm)
-    })
-    .then(response => {
-        // Handle the response here
-        if (response.ok) {
-            // Find the button and change its text to "Submitted"
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            submitButton.innerHTML = "SUBMITTED";
-            // Add a class to the button
-            submitButton.classList.add('button-submitted');
-        } else {
-            throw new Error('Network response was not ok.');
-        }
-    })
-    .catch(error => {
-        // Handle errors here
-        console.error('There was a problem with the fetch operation:', error);
-    });
-});
+            contactForm.addEventListener('submit', function (event) {
+                // Prevent the default form submission
+                event.preventDefault();
 
-getStartedForm.addEventListener('submit', function(event) {
-    // Prevent the default form submission
-    event.preventDefault();
-    
-    // Optionally, you can submit the form asynchronously using JavaScript's Fetch API or XMLHttpRequest
-    // Example using Fetch API:
-    fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
-        method: 'POST',
-        body: new FormData(getStartedForm)
-    })
-    .then(response => {
-        // Handle the response here
-        if (response.ok) {
-            // Find the button and change its text to "Submitted"
-            const submitButton = getStartedForm.querySelector('button[type="submit"]');
-            submitButton.innerHTML = "SUBMITTED";
-            // Add a class to the button
-            submitButton.classList.add('button-submitted');
-        } else {
-            throw new Error('Network response was not ok.');
-        }
-    })
-    .catch(error => {
-        // Handle errors here
-        console.error('There was a problem with the fetch operation:', error);
-    });
-});
+                // Optionally, you can submit the form asynchronously using JavaScript's Fetch API or XMLHttpRequest
+                // Example using Fetch API:
+                fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
+                    method: 'POST',
+                    body: new FormData(contactForm)
+                })
+                    .then(response => {
+                        // Handle the response here
+                        if (response.ok) {
+                            // Find the button and change its text to "Submitted"
+                            const submitButton = contactForm.querySelector('button[type="submit"]');
+                            submitButton.innerHTML = "SUBMITTED";
+                            // Add a class to the button
+                            submitButton.classList.add('button-submitted');
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    })
+                    .catch(error => {
+                        // Handle errors here
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            });
+
+            getStartedForm.addEventListener('submit', function (event) {
+                // Prevent the default form submission
+                event.preventDefault();
+
+                // Optionally, you can submit the form asynchronously using JavaScript's Fetch API or XMLHttpRequest
+                // Example using Fetch API:
+                fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
+                    method: 'POST',
+                    body: new FormData(getStartedForm)
+                })
+                    .then(response => {
+                        // Handle the response here
+                        if (response.ok) {
+                            // Find the button and change its text to "Submitted"
+                            const submitButton = getStartedForm.querySelector('button[type="submit"]');
+                            submitButton.innerHTML = "SUBMITTED";
+                            // Add a class to the button
+                            submitButton.classList.add('button-submitted');
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    })
+                    .catch(error => {
+                        // Handle errors here
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            });
 
 
 
-            
+
 
             dotContainer.addEventListener('click', function () {
                 toggleNav();
