@@ -253,29 +253,26 @@
                 // Prevent the default form submission
                 event.preventDefault();
 
-                // Optionally, you can submit the form asynchronously using JavaScript's Fetch API or XMLHttpRequest
-                // Example using Fetch API:
-                fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
-                    method: 'POST',
-                    body: new FormData(contactForm)
-                })
-                    .then(response => {
-                        // Handle the response here
-                        if (response.ok) {
-                            // Find the button and change its text to "Submitted"
-                            const submitButton = contactForm.querySelector('button[type="submit"]');
-                            submitButton.innerHTML = "SUBMITTED";
-                            // Add a class to the button
-                            submitButton.classList.add('button-submitted');
-                        } else {
-                            throw new Error('Network response was not ok.');
-                        }
-                    })
-                    .catch(error => {
-                        // Handle errors here
-                        console.error('There was a problem with the fetch operation:', error);
-                    });
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.innerHTML = "SENDING"; // Change button text to "SENDING"
+        submitButton.classList.add('button-sending'); // Add class for styling
+
+        fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
+            method: 'POST',
+            body: new FormData(contactForm)
+        })
+            .then(response => {
+                if (response.ok) {
+                    submitButton.innerHTML = "SUBMITTED"; // Change button text to "SUBMITTED" on success
+                    submitButton.classList.add('button-submitted'); // Add class for styling
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
             });
+    });
 
             getStartedForm.addEventListener('submit', function (event) {
                 // Prevent the default form submission

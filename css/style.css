@@ -492,6 +492,21 @@ form textarea:focus {
     cursor: pointer;
   }
 
+  /* Style for the button while sending */
+.button-sending {
+    background-color: #ffc107; /* Change background color to yellow */
+    color: #fff; /* Change text color to white */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+/* Style for the button after submission */
+.button-submitted {
+    background-color: #28a745; /* Change background color to green */
+    color: #fff; /* Change text color to white */
+    cursor: default; /* Reset cursor */
+}
+
+
 
 @media (max-width: 730px) {
     .footer-nav {
