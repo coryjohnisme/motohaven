@@ -241,21 +241,22 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const dotContainer = document.querySelector('.dot-container');
-            const navBar = document.querySelector('.nav-bar');
-            const navLinks = document.querySelectorAll('.nav li a'); // Select all navigation links
-            const contactForm = document.getElementById('contact-form');
-            const getStartedForm = document.getElementById('get-started-form');
+    const dotContainer = document.querySelector('.dot-container');
+    const navBar = document.querySelector('.nav-bar');
+    const navLinks = document.querySelectorAll('.nav li a'); // Select all navigation links
+    const contactForm = document.getElementById('contact-form');
+    const getStartedForm = document.getElementById('get-started-form');
 
-            let isNavOpen = false;
+    let isNavOpen = false;
 
-            contactForm.addEventListener('submit', function (event) {
-                // Prevent the default form submission
-                event.preventDefault();
+    contactForm.addEventListener('submit', function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
 
-                const submitButton = contactForm.querySelector('button[type="submit"]');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
         submitButton.innerHTML = "SENDING"; // Change button text to "SENDING"
         submitButton.classList.add('button-sending'); // Add class for styling
+        submitButton.disabled = true; // Disable the button
 
         fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
             method: 'POST',
