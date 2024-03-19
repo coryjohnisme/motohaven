@@ -241,77 +241,55 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    const dotContainer = document.querySelector('.dot-container');
-    const navBar = document.querySelector('.nav-bar');
-    const navLinks = document.querySelectorAll('.nav li a'); // Select all navigation links
-    const contactForm = document.getElementById('contact-form');
-    const getStartedForm = document.getElementById('get-started-form');
-
-    let isNavOpen = false;
-
-    contactForm.addEventListener('submit', function (event) {
-        // Prevent the default form submission
-        event.preventDefault();
-
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        submitButton.innerHTML = "SENDING"; // Change button text to "SENDING"
-        submitButton.classList.add('button-sending'); // Add class for styling
-        submitButton.disabled = true; // Disable the button
-
-        fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
-            method: 'POST',
-            body: new FormData(contactForm)
-        })
-            .then(response => {
-                if (response.ok) {
-                    submitButton.innerHTML = "SUBMITTED"; // Change button text to "SUBMITTED" on success
-                    submitButton.classList.add('button-submitted'); // Add class for styling
-                } else {
-                    throw new Error('Network response was not ok.');
-                }
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    });
-
-            getStartedForm.addEventListener('submit', function (event) {
+            const dotContainer = document.querySelector('.dot-container');
+            const navBar = document.querySelector('.nav-bar');
+            const navLinks = document.querySelectorAll('.nav li a'); // Select all navigation links
+            const contactForm = document.getElementById('contact-form');
+            const getStartedForm = document.getElementById('get-started-form');
+            const modal = document.getElementById("myModal");
+            const joinButtons = document.querySelectorAll('.btn:not(form .btn)');
+            const btn = document.querySelector(".nav li:nth-child(1) a");
+            const span = document.getElementsByClassName("close")[0];
+            let isNavOpen = false;
+    
+            function handleFormSubmit(form) {
                 // Prevent the default form submission
                 event.preventDefault();
-
-                // Optionally, you can submit the form asynchronously using JavaScript's Fetch API or XMLHttpRequest
-                // Example using Fetch API:
+    
+                const submitButton = form.querySelector('button[type="submit"]');
+                submitButton.innerHTML = "SENDING"; // Change button text to "SENDING"
+                submitButton.classList.add('button-sending'); // Add class for styling
+                submitButton.disabled = true; // Disable the button
+    
                 fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
                     method: 'POST',
-                    body: new FormData(getStartedForm)
+                    body: new FormData(form)
                 })
                     .then(response => {
-                        // Handle the response here
                         if (response.ok) {
-                            // Find the button and change its text to "Submitted"
-                            const submitButton = getStartedForm.querySelector('button[type="submit"]');
-                            submitButton.innerHTML = "SUBMITTED";
-                            // Add a class to the button
-                            submitButton.classList.add('button-submitted');
+                            submitButton.innerHTML = "SUBMITTED"; // Change button text to "SUBMITTED" on success
+                            submitButton.classList.add('button-submitted'); // Add class for styling
                         } else {
                             throw new Error('Network response was not ok.');
                         }
                     })
                     .catch(error => {
-                        // Handle errors here
                         console.error('There was a problem with the fetch operation:', error);
                     });
+            }
+    
+            contactForm.addEventListener('submit', function (event) {
+                handleFormSubmit(contactForm);
             });
-
-
-
-
-
+    
+            getStartedForm.addEventListener('submit', function (event) {
+                handleFormSubmit(getStartedForm);
+            });
+    
             dotContainer.addEventListener('click', function () {
                 toggleNav();
             });
-
-            // Add event listener to each navigation link to close the menu when clicked
+    
             navLinks.forEach(function (link) {
                 link.addEventListener('click', function () {
                     if (isNavOpen) {
@@ -319,14 +297,11 @@
                     }
                 });
             });
-
+    
             function toggleNav() {
                 if (isNavOpen) {
-                    // Enable scrolling
                     document.body.style.overflowY = 'auto';
-                    // For mobile browsers
                     document.removeEventListener('touchmove', preventScroll, { passive: false });
-                    // Scroll to the top of the page
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -334,60 +309,41 @@
                     navBar.style.transform = 'translate(100vw, 0)';
                     dotContainer.style.transform = 'translate(0, 0)';
                 } else {
-                    // Disable scrolling
                     document.body.style.overflowY = 'hidden';
-                    // For mobile browsers
                     document.addEventListener('touchmove', preventScroll, { passive: false });
                     navBar.style.transform = 'translate(0, 0)';
                     dotContainer.style.transform = 'translate(calc(-100vw + 105px), 0)';
                 }
                 isNavOpen = !isNavOpen;
             }
-
+    
             function preventScroll(event) {
                 event.preventDefault();
             }
-
-            // Get the modal
-            var modal = document.getElementById("myModal");
-
-            // Get all elements with the class 'btn' that are not inside a form
-            const joinButtons = document.querySelectorAll('.btn:not(form .btn)');
-
-            // Add event listener to each join button to open the modal when clicked
+    
             joinButtons.forEach(function (button) {
                 button.addEventListener('click', function (event) {
                     event.preventDefault(); // Prevent default action of form submission
                     modal.style.display = "flex";
                 });
             });
-
-            // Get the button that opens the modal from the nav
-            var btn = document.querySelector(".nav li:nth-child(1) a");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks on the button, open the modal
+    
             btn.onclick = function () {
                 modal.style.display = "flex";
             }
-
-            // When the user clicks on <span> (x), close the modal
+    
             span.onclick = function () {
                 modal.style.display = "none";
             }
-
-            // When the user clicks anywhere outside of the modal, close it
+    
             window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
             }
         });
-
-
     </script>
+    
 
 
 
