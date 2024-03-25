@@ -251,16 +251,16 @@
             const btn = document.querySelector(".nav li:nth-child(1) a");
             const span = document.getElementsByClassName("close")[0];
             let isNavOpen = false;
-    
+
             function handleFormSubmit(form) {
                 // Prevent the default form submission
                 event.preventDefault();
-    
+
                 const submitButton = form.querySelector('button[type="submit"]');
                 submitButton.innerHTML = "SENDING"; // Change button text to "SENDING"
                 submitButton.classList.add('button-sending'); // Add class for styling
                 submitButton.disabled = true; // Disable the button
-    
+
                 fetch('https://script.google.com/macros/s/AKfycbxjQk-4WB__3cWSv5-RQD1PcgjoZmemfIZmV0VkS74ckEXQHlNhpFYyycPJ5hYvrXptVg/exec', {
                     method: 'POST',
                     body: new FormData(form)
@@ -277,19 +277,19 @@
                         console.error('There was a problem with the fetch operation:', error);
                     });
             }
-    
+
             contactForm.addEventListener('submit', function (event) {
                 handleFormSubmit(contactForm);
             });
-    
+
             getStartedForm.addEventListener('submit', function (event) {
                 handleFormSubmit(getStartedForm);
             });
-    
+
             dotContainer.addEventListener('click', function () {
                 toggleNav();
             });
-    
+
             navLinks.forEach(function (link) {
                 link.addEventListener('click', function () {
                     if (isNavOpen) {
@@ -297,7 +297,7 @@
                     }
                 });
             });
-    
+
             function toggleNav() {
                 if (isNavOpen) {
                     document.body.style.overflowY = 'auto';
@@ -316,26 +316,26 @@
                 }
                 isNavOpen = !isNavOpen;
             }
-    
+
             function preventScroll(event) {
                 event.preventDefault();
             }
-    
+
             joinButtons.forEach(function (button) {
                 button.addEventListener('click', function (event) {
                     event.preventDefault(); // Prevent default action of form submission
                     modal.style.display = "flex";
                 });
             });
-    
+
             btn.onclick = function () {
                 modal.style.display = "flex";
             }
-    
+
             span.onclick = function () {
                 modal.style.display = "none";
             }
-    
+
             window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
