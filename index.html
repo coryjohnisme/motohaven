@@ -256,6 +256,10 @@
         document.addEventListener("DOMContentLoaded", function () {
             const contactForm = document.getElementById('get-started-form');
             const modal = document.getElementById("myModal");
+            const joinButtons = document.querySelectorAll('.btn:not(form .btn)');
+            const btn = document.querySelector(".nav li:nth-child(1) a");
+            const span = document.getElementsByClassName("close")[0];
+            let isNavOpen = false;
     
             function handleFormSubmit(form) {
                 // Prevent the default form submission
@@ -319,11 +323,6 @@
                 handleFormSubmit(contactForm);
             });
     
-            const joinButtons = document.querySelectorAll('.btn:not(form .btn)');
-            const btn = document.querySelector(".nav li:nth-child(1) a");
-            const span = document.getElementsByClassName("close")[0];
-            let isNavOpen = false;
-    
             joinButtons.forEach(function (button) {
                 button.addEventListener('click', function (event) {
                     event.preventDefault(); // Prevent default action of form submission
@@ -346,6 +345,7 @@
             }
         });
     </script>
+    
     
     
     
