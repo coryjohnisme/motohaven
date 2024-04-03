@@ -9,7 +9,24 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-16481581004');
+
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16481581004/cqj3CJ_PjKMZEMzvg7M9',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
+    <!-- Event snippet for Form Submissions conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+
+    
     <!-- Meta Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -291,6 +308,7 @@
                     });
                     // Submit form data to the main page
                     form.submit();
+                    gtag_report_conversion();
             }
            
     
